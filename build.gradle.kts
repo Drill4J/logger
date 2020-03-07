@@ -1,13 +1,18 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.epam.drill.cross-compilation") version "0.13.0"
+    kotlin("multiplatform") version "1.3.70"
+    id("com.epam.drill.cross-compilation") version "0.15.1"
     `maven-publish`
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven(url = "https://dl.bintray.com/kotlin/kotlinx/")
 }
+
+val serializationRuntimeVersion: String by extra
+val ktorUtilVersion: String by extra
+val loggingVersion: String by extra
 
 kotlin {
 
